@@ -6,7 +6,7 @@
           <NavLink link="/" class="home-link">{{ $site.title }} </NavLink>
         </div>
         <div>
-          <NavLink :link="$themeConfig.mainSiteUrl" v-if="$themeConfig.showBackToMainSite" class="home-link">{{ $themeConfig.mainSiteTitle }} </NavLink>
+          <NavLink :link="$themeConfig.mainSiteUrl" v-if="$themeConfig.showBackToMainSite" class="back-to-main-link">{{ $themeConfig.mainSiteTitle }} </NavLink>
         </div>
         <div class="header-right-wrap">
           <ul v-if="$themeConfig.nav" class="nav">
@@ -78,6 +78,10 @@ export default {
       font-weight bold
       font-family PT Serif, Serif
       text-decoration none
+  
+  .back-to-main-link
+    font-size 24px
+    text-decoration none
 
   .header-right-wrap
     flex 1
