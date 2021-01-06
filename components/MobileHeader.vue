@@ -2,7 +2,8 @@
   <div id="mobile-header">
     <div class="mobile-header-bar">
       <div class="mobile-header-title">
-        <NavLink link="/" class="mobile-home-link">{{ $site.title }} </NavLink>
+        <NavLink link="/" class="mobile-home-link" v-if="!$themeConfig.hideNavSiteTitle">{{ $site.title }} </NavLink>
+        <NavLink :link="$themeConfig.mainSiteUrl" v-if="$themeConfig.showBackToMainSite" class="back-to-main-link">{{ $themeConfig.mainSiteTitle }} </NavLink>
         <component
           :is="isOpen ? 'XIcon' : 'MenuIcon'"
           @click="$emit('toggle-sidebar')"
